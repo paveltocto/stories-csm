@@ -1,0 +1,14 @@
+/*
+Theme Name: Stories from scm
+Author: Pavel Tocto
+Description: Hola soy un scrum master certificated y este no es un bloog serio ni pretendo ser serio.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+/* line 15, assets/sass/style.scss */
+body {
+  background-color: #6D4989;
+}
