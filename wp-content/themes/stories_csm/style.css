@@ -11,4 +11,74 @@ Use it to make something cool, have fun, and share what you've learned with othe
 /* line 15, assets/sass/style.scss */
 body {
   background-color: #6D4989;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* line 20, assets/sass/style.scss */
+object {
+  width: 100%;
+}
+
+/* line 24, assets/sass/style.scss */
+.page-title {
+  text-transform: uppercase;
+  color: #633818;
+}
+
+/* line 30, assets/sass/style.scss */
+.content-posts, .content-sidebar {
+  background-color: #FFF;
+  border-radius: 30px;
+  padding: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+/* line 40, assets/sass/style.scss */
+.content-posts .post {
+  position: relative;
+  padding: 10px 0;
+}
+/* line 44, assets/sass/style.scss */
+.content-posts .post-entry-information {
+  position: absolute;
+  top: 50%;
+  color: #FFF;
+  transform: translateY(-50%);
+  left: 5%;
+  width: 50%;
+}
+/* line 52, assets/sass/style.scss */
+.content-posts .post-entry-information h3 {
+  text-transform: uppercase;
+}
+/* line 57, assets/sass/style.scss */
+.content-posts .post img {
+  border-radius: 30px;
+}
+
+/* line 66, assets/sass/style.scss */
+img {
+  height: auto;
+  max-width: 100%;
+  position: relative;
+}
+
+/* line 72, assets/sass/style.scss */
+.pagination {
+  justify-content: center;
+}
+/* line 77, assets/sass/style.scss */
+.pagination .page-item.active .page-link {
+  background-color: #6D4989;
+  border-color: #6D4989;
+  color: #FFF;
+}
+/* line 83, assets/sass/style.scss */
+.pagination .page-item .page-link {
+  color: #6D4989;
+}
+
+/* line 89, assets/sass/style.scss */
+.fondo {
+  background-image: url("./assets/images/character.png");
 }

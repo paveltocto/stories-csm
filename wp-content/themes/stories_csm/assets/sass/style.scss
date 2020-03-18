@@ -14,4 +14,78 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 body{
     background-color: $color__background-body;
+    font-family: 'Roboto', sans-serif;;
+}
+
+object{
+    width: 100%;
+}
+
+.page-title{
+    text-transform: uppercase;
+    color: $color__post-title;
+}
+
+.content{
+    &-posts,
+    &-sidebar{
+        background-color: $color__background-posts;
+        border-radius: 30px;
+        padding: 20px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    &-posts{
+        .post{
+            position: relative;
+            padding: 10px 0;
+
+            &-entry-information{
+                position: absolute;
+                top: 50%;
+                color: $color__text-post-item;
+                transform: translateY(-50%);
+                left: 5%;
+                width: 50%;
+
+                h3{
+                    text-transform: uppercase;
+                }
+            }
+
+            img{
+                border-radius: 30px;
+            }
+
+         
+        }
+    }
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+    position: relative;
+}
+
+.pagination{
+    justify-content: center;
+
+    .page-item{
+        &.active{
+            .page-link{
+                background-color: $color__pagination-page;
+                border-color: $color__pagination-page;
+                color: $color__pagination-page-active;
+            }
+        }
+        .page-link{
+            color: $color__pagination-page;
+        }
+    }
+}
+
+.fondo{
+    background-image: url('./assets/images/character.png');
 }

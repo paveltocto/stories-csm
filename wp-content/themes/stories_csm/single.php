@@ -1,5 +1,12 @@
 <?php get_header(); ?>
 
+
+<div class="col-md-12">
+
+
+<a href="'<?php echo home_url(); ?> '" >Regresar</a>
+
+
 <?php if (have_posts()) : ?>
     <section>
         <?php while (have_posts()) : the_post(); ?>
@@ -18,4 +25,6 @@
     ?>
 
 <?php endif; ?>
+</div>
+
 <?php get_footer() ?>

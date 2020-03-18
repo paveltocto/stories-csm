@@ -4,9 +4,13 @@ function stories_csm_setup()
 {
 
     add_theme_support('post-thumbnails');
-    add_image_size( 'featured-post-thumb', 340, 210, true );
-    add_image_size( 'featured-post-thumb-feature', 560, 400, true );
+
+    add_image_size( 'storiescsm-post-thumb', 340, 210, true );
+    add_image_size( 'storiescsm-post-thumb-feature', 730, 400, true );
     add_image_size( 'post-thumb', 1200, 400 );
+
+    set_post_thumbnail_size( 1200, 9999 );
+
 
     add_theme_support('menus');
 
@@ -58,9 +62,16 @@ function stories_csm_widgets_init()
 add_action('widgets_init', 'stories_csm_widgets_init');
 
 
+
+
 function stories_csm_scripts()
 {
+
+    wp_register_style( 'bootstrap-css', get_template_directory_uri().'/assets/css/bootstrap.min.css', false, null, 'all' );
+    wp_enqueue_style( 'bootstrap-css' );
+
     wp_enqueue_style( 'style-name', get_stylesheet_uri() );
+
 
 /*     wp_enqueue_script('stories_csm_html5shiv', get_template_directory_uri() . '/js/ie/html5shiv.js', array(), '1.0');
     wp_script_add_data('stories_csm_html5shiv', 'conditional', 'lte IE 8');
@@ -97,3 +108,54 @@ add_filter( 'the_content_more_link', 'modify_read_more_link' );
 if (!class_exists('Favorite_Post_Widget')) {
     require_once(__DIR__ . '/Favorite_Post_Widget.php');
 }
+
+
+
+function bootstrap_pagination( \WP_Query $wp_query = null, $echo = true ) {
+
+	if ( null === $wp_query ) {
+		global $wp_query;
+	}
+
+	$pages = paginate_links( [
+			'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
+			'format'       => '?paged=%#%',
+			'current'      => max( 1, get_query_var( 'paged' ) ),
+			'total'        => $wp_query->max_num_pages,
+			'type'         => 'array',
+			'show_all'     => false,
+			'end_size'     => 3,
+			'mid_size'     => 1,
+			'prev_next'    => true,
+			'prev_text'    => __( '« Prev' ),
+			'next_text'    => __( 'Next »' ),
+			'add_args'     => false,
+			'add_fragment' => ''
+		]
+	);
+
+	if ( is_array( $pages ) ) {
+		//$paged = ( get_query_var( 'paged' ) == 0 ) ? 1 : get_query_var( 'paged' );
+
+		$pagination = '<nav class="navigation"><ul class="pagination">';
+
+		foreach ($pages as $page) {
+                        $pagination .= '<li class="page-item' . (strpos($page, 'current') !== false ? ' active' : '') . '"> ' . str_replace('page-numbers', 'page-link', $page) . '</li>';
+                }
+
+		$pagination .= '</ul></nav>';
+
+		if ( $echo ) {
+			echo $pagination;
+		} else {
+			return $pagination;
+		}
+	}
+
+	return null;
+}
+
+function add_google_fonts() {
+    wp_enqueue_style( 'google_web_fonts', 'https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap' );
+  }
+  add_action( 'wp_enqueue_scripts', 'add_google_fonts' );

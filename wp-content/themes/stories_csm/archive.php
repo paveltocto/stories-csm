@@ -1,4 +1,7 @@
 <?php get_header(); ?>
+<div class="col-md-8">
+
+
 <section>
     <?php if (have_posts()) : ?>
         <header class="major">
@@ -20,4 +23,7 @@
         </div>
     <?php endif; ?>
 </section>
+</div>
+<?php get_sidebar(); ?>
+
 <?php get_footer() ?>
