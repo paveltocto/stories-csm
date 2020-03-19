@@ -8,84 +8,103 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
-
 @import "./colors";
 
 
-body{
-    background-color: $color__background-body;
-    font-family: 'Roboto', sans-serif;;
+body {
+  background-color: $color__background-body;
+  font-family: 'Roboto', sans-serif;;
 }
 
-object{
-    width: 100%;
+object {
+  width: 100%;
 }
 
-.page-title{
-    text-transform: uppercase;
-    color: $color__post-title;
+.page-title {
+  text-transform: uppercase;
+  color: $color__post-title;
 }
 
-.content{
-    &-posts,
-    &-sidebar{
-        background-color: $color__background-posts;
-        border-radius: 30px;
-        padding: 20px;
-        margin-top: 30px;
-        margin-bottom: 30px;
+.content {
+  &-posts,
+  &-sidebar {
+    background-color: $color__background-posts;
+    border-radius: 30px;
+    padding: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  &-post-single {
+    background-color: $color__background-posts;
+    border-radius: 30px;
+
+    .page-header{
+      padding: 20px;
+      color: $color__text-post-title;
+
+      a{
+        color: $color__background-button;
+      }
     }
 
-    &-posts{
-        .post{
-            position: relative;
-            padding: 10px 0;
+    &-description{
+      padding: 20px;
+      color: $color__text-post-description;
+    }
+  }
 
-            &-entry-information{
-                position: absolute;
-                top: 50%;
-                color: $color__text-post-item;
-                transform: translateY(-50%);
-                left: 5%;
-                width: 50%;
+  &-posts {
+    .post {
+      position: relative;
+      padding: 10px 0;
 
-                h3{
-                    text-transform: uppercase;
-                }
-            }
+      &-entry-information {
+        position: absolute;
+        top: 50%;
+        color: $color__text-post-item;
+        transform: translateY(-50%);
+        left: 5%;
+        width: 50%;
 
-            img{
-                border-radius: 30px;
-            }
-
-         
+        h3 {
+          text-transform: uppercase;
         }
+      }
+
+      img {
+        border-radius: 30px;
+      }
+
+
     }
+  }
 }
 
 img {
-    height: auto;
-    max-width: 100%;
-    position: relative;
+  height: auto;
+  max-width: 100%;
+  position: relative;
 }
 
-.pagination{
-    justify-content: center;
+.pagination {
+  justify-content: center;
 
-    .page-item{
-        &.active{
-            .page-link{
-                background-color: $color__pagination-page;
-                border-color: $color__pagination-page;
-                color: $color__pagination-page-active;
-            }
-        }
-        .page-link{
-            color: $color__pagination-page;
-        }
+  .page-item {
+    &.active {
+      .page-link {
+        background-color: $color__pagination-page;
+        border-color: $color__pagination-page;
+        color: $color__pagination-page-active;
+      }
     }
+
+    .page-link {
+      color: $color__pagination-page;
+    }
+  }
 }
 
-.fondo{
-    background-image: url('./assets/images/character.png');
+.fondo {
+  background-image: url('./assets/images/character.png');
 }

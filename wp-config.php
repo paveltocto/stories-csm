@@ -16,16 +16,16 @@
 
 // ** Ajustes de MySQL. Solicita estos datos a tu proveedor de alojamiento web. ** //
 /** El nombre de tu base de datos de WordPress */
-define( 'DB_NAME', 'blog_fukuda' );
+define( 'DB_NAME', 'stories_csm' );
 
 /** Tu nombre de usuario de MySQL */
 define( 'DB_USER', 'root' );
 
 /** Tu contraseña de MySQL */
-define( 'DB_PASSWORD', 'root' );
+define( 'DB_PASSWORD', 'ptocto0125' );
 
 /** Host de MySQL (es muy probable que no necesites cambiarlo) */
-define( 'DB_HOST', 'localhost' );
+define( 'DB_HOST', '127.0.0.1' );
 
 /** Codificación de caracteres para la base de datos. */
 define( 'DB_CHARSET', 'utf8mb4' );
@@ -59,7 +59,7 @@ define( 'NONCE_SALT', '[cTSEuSnLi Qn!3xAteGbW3|7{;a8Pz]E1?cNB <l{!mKF.^nebgyyy`Y
  * Cambia el prefijo si deseas instalar multiples blogs en una sola base de datos.
  * Emplea solo números, letras y guión bajo.
  */
-$table_prefix = 'fk_';
+$table_prefix = 'scm_';
 
 
 /**
@@ -69,7 +69,7 @@ $table_prefix = 'fk_';
  * Se recomienda encarecidamente a los desarrolladores de temas y plugins que usen WP_DEBUG
  * en sus entornos de desarrollo.
  */
-define('WP_DEBUG', false);
+define('WP_DEBUG', true);
 
 /* ¡Eso es todo, deja de editar! Feliz blogging */
 
