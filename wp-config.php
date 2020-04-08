@@ -16,7 +16,7 @@
 
 // ** Ajustes de MySQL. Solicita estos datos a tu proveedor de alojamiento web. ** //
 /** El nombre de tu base de datos de WordPress */
-define( 'DB_NAME', 'stories_csm' );
+define( 'DB_NAME', 'stories_csm_new' );
 
 /** Tu nombre de usuario de MySQL */
 define( 'DB_USER', 'root' );
@@ -71,11 +71,18 @@ $table_prefix = 'scm_';
  */
 define('WP_DEBUG', true);
 
+define('FS_METHOD', 'direct');
+
+
+define('WP_TEMP_DIR', ABSPATH . 'wp-content/');
+
+
+
 /* ¡Eso es todo, deja de editar! Feliz blogging */
 
 /** WordPress absolute path to the Wordpress directory. */
 if ( !defined('ABSPATH') )
-	define('ABSPATH', dirname(__FILE__) . '/');
+    define('ABSPATH', dirname(__FILE__) . '/');
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');

@@ -40,6 +40,24 @@ function stories_csm_setup()
     ));
 
     add_theme_support('title-tag');
+
+
+
+    $starter_content = array(
+        'widgets'     => array(
+            // Place three core-defined widgets in the sidebar area.
+            'sidebar-1' => array(
+                'text_business_info',
+                'search',
+                'text_about',
+            ),
+        ),
+    );
+
+
+    $starter_content = apply_filters( 'stories_csm_starter_content', $starter_content );
+
+    add_theme_support( 'starter-content', $starter_content );
 }
 
 add_action('after_setup_theme', 'stories_csm_setup');
@@ -49,7 +67,7 @@ function stories_csm_widgets_init()
     register_sidebar(array(
         'name' => __('Widget Area', 'stories_csm'),
         'id' => 'sidebar-1',
-        'description' => __('Add widgets here to appear in your sidebar.', 'stories_csm'),
+        'description' => __('Add widgets here to appear in your sidebarssss.', 'stories_csm'),
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget' => '</aside>',
         'before_title' => '<h2 class="widget-title">',

@@ -38,6 +38,15 @@ object {
     padding: 20px;
     margin-top: 30px;
     margin-bottom: 30px;
+
+    .widget-title{
+      text-transform: uppercase;
+      color: $color__post-title;
+    }
+    .textwidget{
+      color: $color__post-title;
+      font-size: 14px;
+    }
   }
 
   &-post-single {
@@ -82,6 +91,7 @@ object {
 
         h3 {
           text-transform: uppercase;
+          font-size: 1.6em;
         }
       }
 
