@@ -19,6 +19,12 @@
                     <div class="content-post-single-description">
                         <?php the_content() ?>
                     </div>
+                    <div class="content-post-single-social-share">
+                        <h2>Compartir</h2>
+                        <?php echo do_shortcode('[social_share_button]'); ?>
+                    </div>
+
+
                     <?php if (comments_open() || get_comments_number()) : ?>
                         <div class="content-post-single-comments">
                             <?php comments_template(); ?>

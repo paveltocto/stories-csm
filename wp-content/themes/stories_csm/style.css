@@ -2663,42 +2663,47 @@ object {
   text-transform: uppercase;
   color: #633818;
 }
-/* line 46, assets/sass/style.scss */
+/* line 47, assets/sass/style.scss */
 .content-posts .textwidget, .content-sidebar .textwidget {
   color: #633818;
   font-size: 14px;
 }
-/* line 52, assets/sass/style.scss */
+/* line 53, assets/sass/style.scss */
 .content-post-single {
   background-color: #F7F5F8;
   border-radius: 30px;
 }
-/* line 56, assets/sass/style.scss */
+/* line 57, assets/sass/style.scss */
 .content-post-single .page-header {
   padding: 20px;
   color: #633818;
 }
-/* line 60, assets/sass/style.scss */
+/* line 61, assets/sass/style.scss */
 .content-post-single .page-header a {
   color: #E8D241;
 }
-/* line 65, assets/sass/style.scss */
-.content-post-single-comments, .content-post-single-description {
+/* line 66, assets/sass/style.scss */
+.content-post-single-comments, .content-post-single-social-share, .content-post-single-description {
   padding: 10px 20px 50px 20px;
   color: #633818;
   border-bottom: 3px solid #633818;
 }
-/* line 72, assets/sass/style.scss */
+/* line 74, assets/sass/style.scss */
+.content-post-single-social-share {
+  padding: 10px 20px 10px 20px;
+  border-bottom: 0;
+}
+/* line 79, assets/sass/style.scss */
 .content-post-single-comments {
   padding: 20px;
   color: #633818;
 }
-/* line 80, assets/sass/style.scss */
+/* line 87, assets/sass/style.scss */
 .content-posts .post {
   position: relative;
   padding: 10px 0;
 }
-/* line 84, assets/sass/style.scss */
+/* line 91, assets/sass/style.scss */
 .content-posts .post-entry-information {
   position: absolute;
   top: 50%;
@@ -2707,39 +2712,39 @@ object {
   left: 5%;
   width: 50%;
 }
-/* line 92, assets/sass/style.scss */
+/* line 99, assets/sass/style.scss */
 .content-posts .post-entry-information h3 {
   text-transform: uppercase;
   font-size: 1.6em;
 }
-/* line 98, assets/sass/style.scss */
+/* line 105, assets/sass/style.scss */
 .content-posts .post img {
   border-radius: 30px;
 }
 
-/* line 107, assets/sass/style.scss */
+/* line 114, assets/sass/style.scss */
 img {
   height: auto;
   max-width: 100%;
   position: relative;
 }
 
-/* line 113, assets/sass/style.scss */
+/* line 120, assets/sass/style.scss */
 .pagination {
   justify-content: center;
 }
-/* line 118, assets/sass/style.scss */
+/* line 125, assets/sass/style.scss */
 .pagination .page-item.active .page-link {
   background-color: #6D4989;
   border-color: #6D4989;
   color: #FFF;
 }
-/* line 125, assets/sass/style.scss */
+/* line 132, assets/sass/style.scss */
 .pagination .page-item .page-link {
   color: #6D4989;
 }
 
-/* line 132, assets/sass/style.scss */
+/* line 139, assets/sass/style.scss */
 .comment-list > li {
   border: 3px solid #633818;
   border-radius: 20px;
@@ -2747,43 +2752,63 @@ img {
   list-style: none;
   margin-top: 15px;
 }
-/* line 141, assets/sass/style.scss */
+/* line 148, assets/sass/style.scss */
 .comment-list .comment-body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin: 10px;
 }
-/* line 147, assets/sass/style.scss */
+/* line 154, assets/sass/style.scss */
 .comment-list .comment-body-content {
   flex: 99 0 80%;
   background-color: #FFF;
   padding: 10px;
 }
-/* line 153, assets/sass/style.scss */
+/* line 160, assets/sass/style.scss */
 .comment-list .comment-body-actions {
   flex: 1 0 20%;
   justify-content: center;
   align-items: flex-end;
   display: flex;
 }
-/* line 159, assets/sass/style.scss */
+/* line 166, assets/sass/style.scss */
 .comment-list .comment-body-actions .reply {
   background-color: #E8D241;
   padding: 5px 10px;
   border-radius: 5px;
 }
-/* line 163, assets/sass/style.scss */
+/* line 171, assets/sass/style.scss */
 .comment-list .comment-body-actions .reply a {
   color: #FFF;
 }
-/* line 171, assets/sass/style.scss */
+/* line 179, assets/sass/style.scss */
 .comment-list .comment .children article {
   padding: 15px 15px 15px 0;
   border-left: 3px solid #633818;
 }
 
-/* line 179, assets/sass/style.scss */
+/* line 189, assets/sass/style.scss */
+.comment-respond input, .comment-respond button, .comment-respond select, .comment-respond optgroup, .comment-respond textarea {
+  width: 100%;
+  background-color: #d1d1d1;
+  border: 0;
+  padding: 8px;
+}
+/* line 194, assets/sass/style.scss */
+.comment-respond input:focus, .comment-respond button:focus, .comment-respond select:focus, .comment-respond optgroup:focus, .comment-respond textarea:focus {
+  outline: none;
+}
+/* line 199, assets/sass/style.scss */
+.comment-respond [type="submit"] {
+  width: auto;
+  background-color: #E8D241;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #FFF;
+}
+
+/* line 208, assets/sass/style.scss */
 .fondo {
   background-image: url("./assets/images/character.png");
 }

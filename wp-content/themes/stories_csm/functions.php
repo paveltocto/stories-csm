@@ -42,9 +42,8 @@ function stories_csm_setup()
     add_theme_support('title-tag');
 
 
-
     $starter_content = array(
-        'widgets'     => array(
+        'widgets' => array(
             // Place three core-defined widgets in the sidebar area.
             'sidebar-1' => array(
                 'text_business_info',
@@ -55,9 +54,9 @@ function stories_csm_setup()
     );
 
 
-    $starter_content = apply_filters( 'stories_csm_starter_content', $starter_content );
+    $starter_content = apply_filters('stories_csm_starter_content', $starter_content);
 
-    add_theme_support( 'starter-content', $starter_content );
+    add_theme_support('starter-content', $starter_content);
 }
 
 add_action('after_setup_theme', 'stories_csm_setup');
@@ -179,9 +178,6 @@ function add_google_fonts()
 add_action('wp_enqueue_scripts', 'add_google_fonts');
 
 
-require get_template_directory() . '/classes/class_storiescsm_walker_comment.php';
-
-
 function my_comments_callback($comment, $args, $depth)
 {
     //checks if were using a div or ol|ul for our output
@@ -230,3 +226,51 @@ function my_comments_callback($comment, $args, $depth)
     </article><!-- .comment-body -->
     <?php
 }
+
+
+function update_comment_fields($fields)
+{
+
+    $commenter = wp_get_current_commenter();
+    $req = get_option('require_name_email');
+    $aria_req = $req ? "aria-required='true'" : '';
+
+    $fields['email'] =
+        '<p class="comment-form-email">
+			<input id="email" name="email" type="email" placeholder="' . esc_attr__("Correo electrónico (necesario)", "text-domain") . '" value="' . esc_attr($commenter['comment_author_email']) .
+        '" size="30" ' . $aria_req . ' />
+		</p>';
+
+    $fields['author'] =
+        '<p class="comment-form-author">
+			<input id="author" name="author" type="text" placeholder="' . esc_attr__("Nombre (necesario)", "text-domain") . '" value="' . esc_attr($commenter['comment_author']) .
+        '" size="30" ' . $aria_req . ' />
+		</p>';
+
+    $fields['url'] =
+        '<p class="comment-form-url">
+			<input id="url" name="url" type="url"  placeholder="' . esc_attr__("Web", "text-domain") . '" value="' . esc_attr($commenter['comment_author_url']) .
+        '" size="30" />
+			</p>';
+
+    return $fields;
+}
+
+add_filter('comment_form_default_fields', 'update_comment_fields');
+
+
+function update_form_defaults($defaults)
+{
+    $defaults['comment_field'] = '<p class="comment-form-comment">
+                                    <textarea placeholder="Introduce aquí tu comentario" id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea>
+                                  </p>';
+    $defaults['label_submit'] = __('Publicar');
+    $defaults['title_reply_to'] = __('Responder a');
+    $defaults['title_reply'] = __('Responder');
+
+    return $defaults;
+}
+
+
+add_filter('comment_form_defaults', 'update_form_defaults');
+

@@ -6,8 +6,8 @@
  * and the comment form.
  *
  * @package WordPress
- * @subpackage Twenty_Sixteen
- * @since Twenty Sixteen 1.0
+ * @subpackage Twenty_Fifteen
+ * @since Twenty Fifteen 1.0
  */
 
 /*
@@ -27,17 +27,17 @@ if (post_password_required()) {
             <?php
             $comments_number = get_comments_number();
             if ('1' === $comments_number) {
-                /* translators: %s: post title */
-                printf(_x('One thought on &ldquo;%s&rdquo;', 'comments title', 'twentysixteen'), get_the_title());
+                /* translators: %s: Post title. */
+                printf(_x('Un comentario en &ldquo;%s&rdquo;', 'comments title', 'stories_csm'), get_the_title());
             } else {
                 printf(
-                /* translators: 1: number of comments, 2: post title */
+                /* translators: 1: Number of comments, 2: Post title. */
                     _nx(
-                        '%1$s thought on &ldquo;%2$s&rdquo;',
-                        '%1$s thoughts on &ldquo;%2$s&rdquo;',
+                        '%1$s comentario en &ldquo;%2$s&rdquo;',
+                        '%1$s comentarios en &ldquo;%2$s&rdquo;',
                         $comments_number,
                         'comments title',
-                        'twentysixteen'
+                        'stories_csm'
                     ),
                     number_format_i18n($comments_number),
                     get_the_title()
@@ -50,31 +50,33 @@ if (post_password_required()) {
 
         <ol class="comment-list">
             <?php
-            wp_list_comments(array(
-                'style' => 'ul',
-                'short_ping' => true,
-                'avatar_size' => 30,
-                'callback' => 'my_comments_callback'
-            ));
+            wp_list_comments(
+                array(
+                    'style' => 'ul',
+                    'short_ping' => true,
+                    'avatar_size' => 30,
+                    'callback' => 'my_comments_callback'
+                )
+            );
             ?>
         </ol><!-- .comment-list -->
 
         <?php the_comments_navigation(); ?>
 
-    <?php endif; // Check for have_comments(). ?>
+    <?php endif; ?>
 
     <?php
     // If comments are closed and there are comments, let's leave a little note, shall we?
     if (!comments_open() && get_comments_number() && post_type_supports(get_post_type(), 'comments')) :
         ?>
-        <p class="no-comments"><?php _e('Comments are closed.', 'twentysixteen'); ?></p>
+        <p class="no-comments"><?php _e('Comments are closed.', 'stories_csm'); ?></p>
     <?php endif; ?>
 
+
     <?php
-    comment_form(array(
-        'title_reply_before' => '<h2 id="reply-title" class="comment-reply-titleee">',
-        'title_reply_after' => '</h2>',
-    ));
-    ?>
+
+
+    comment_form();
+ ?>
 
 </div><!-- .comments-area -->

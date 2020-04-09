@@ -12,7 +12,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 @import "./colors";
 
 ol,
-ul{
+ul {
   list-style: none;
 }
 
@@ -39,11 +39,12 @@ object {
     margin-top: 30px;
     margin-bottom: 30px;
 
-    .widget-title{
+    .widget-title {
       text-transform: uppercase;
       color: $color__post-title;
     }
-    .textwidget{
+
+    .textwidget {
       color: $color__post-title;
       font-size: 14px;
     }
@@ -63,10 +64,16 @@ object {
     }
 
     &-comments,
+    &-social-share,
     &-description {
       padding: 10px 20px 50px 20px;
       color: $color__text-post-description;
       border-bottom: 3px solid $color__text-post-description;
+    }
+
+    &-social-share {
+      padding: 10px 20px 10px 20px;
+      border-bottom: 0;
     }
 
     &-comments {
@@ -134,45 +141,67 @@ img {
     border-radius: 20px;
     padding: 5px 15px;
     list-style: none;
-    margin-top: 15px ;
+    margin-top: 15px;
   }
 
-  .comment{
-    &-body{
+  .comment {
+    &-body {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
       margin: 10px;
 
-      &-content{
+      &-content {
         flex: 99 0 80%;
         background-color: $color__background-post-comment;
         padding: 10px;
       }
 
-      &-actions{
+      &-actions {
         flex: 1 0 20%;
         justify-content: center;
         align-items: flex-end;
         display: flex;
 
-        .reply{
+        .reply {
           background-color: $color__background-button;
-          padding:5px 10px;
+          padding: 5px 10px;
           border-radius: 5px;
-          a{
+
+          a {
             color: $color__button-text;
           }
         }
       }
     }
 
-    .children{
-      article{
+    .children {
+      article {
         padding: 15px 15px 15px 0;
         border-left: 3px solid $color__border-post-comment;
       }
     }
+  }
+}
+
+
+.comment-respond {
+  input, button, select, optgroup, textarea {
+    width: 100%;
+    background-color: $color__background-input-comment;
+    border: 0;
+    padding: 8px;
+    &:focus{
+      outline: none;
+    }
+  }
+
+  [type="submit"] {
+    width: auto;
+    background-color: $color__background-button;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: $color__button-text;
   }
 }
 
