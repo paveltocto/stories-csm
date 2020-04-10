@@ -2768,14 +2768,14 @@ img {
 /* line 160, assets/sass/style.scss */
 .comment-list .comment-body-actions {
   flex: 1 0 20%;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: flex-end;
   display: flex;
 }
 /* line 166, assets/sass/style.scss */
 .comment-list .comment-body-actions .reply {
   background-color: #E8D241;
-  padding: 5px 10px;
+  padding: 5px 20px;
   border-radius: 5px;
 }
 /* line 171, assets/sass/style.scss */

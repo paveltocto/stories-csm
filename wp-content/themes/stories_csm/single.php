@@ -20,7 +20,7 @@
                         <?php the_content() ?>
                     </div>
                     <div class="content-post-single-social-share">
-                        <h2>Compartir</h2>
+                        <h2><?php _e( 'Compartir', 'stories_scm' ) ?></h2>
                         <?php echo do_shortcode('[social_share_button]'); ?>
                     </div>
 
